@@ -12,9 +12,9 @@
 #include <search.h>
 
 using namespace std;
-AllegroManager::AllegroManager(int largeur, int hauteur, int nbEntities):
-height {hauteur},
-width {largeur},
+AllegroManager::AllegroManager(int width, int height, int nbEntities):
+width {width},
+height {height},
 nombreEntities {nbEntities}
 {
     init();
@@ -72,18 +72,17 @@ void AllegroManager::mainloop() {
         // On affiche le backbuffer
         al_flip_display();
 
-        this_thread::sleep_for(std::chrono::milliseconds(1));
+        this_thread::sleep_for(std::chrono::milliseconds(10));
 
         gStep++;
 
     }
 }
-    void AllegroManager::init() {
+    void AllegroManager::init() <{
 
         if(!al_init()) {
             crashOnError("failed to initialize allegro!");
         }
-
         if(!al_init_primitives_addon()) {
             crashOnError("failed to initialize allegro primitives addon!");
         }
@@ -95,11 +94,9 @@ void AllegroManager::mainloop() {
         if(!gDisplay) {
             crashOnError("failed to initialize allegro display!");
         }
-
         if(!al_install_keyboard()) {
             crashOnError("Failed to initialize allegro keyboard handling!");
         }
-
         if(!al_install_mouse()) {
             crashOnError("Failed to initialize allegro mouse handling!");
         }

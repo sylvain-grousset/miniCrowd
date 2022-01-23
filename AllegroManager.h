@@ -16,7 +16,7 @@ using namespace std;
 class AllegroManager {
 
 public:
-    AllegroManager(int largeur, int hauteur, int nbEntities); //Constructeur
+    AllegroManager(int width, int height, int nbEntities); //Constructeur
     ~AllegroManager();
 
 private:
