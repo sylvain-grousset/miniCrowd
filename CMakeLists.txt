@@ -17,8 +17,8 @@ endif(UNIX)
 # Attempt at configuring Allegro for MinGW, not tested...
 if(MINGW)
    # À mettre à jour en fonction de où vous avez installé Allegro
-   include_directories( "C:/MinGW/include" )
-   link_directories( "C:/MinGW/lib" )
+   include_directories( "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/include" )
+   link_directories("C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib" )
    target_link_libraries(miniCrowd liballegro.dll.a liballegro_primitives.dll.a)
 endif(MINGW)
 
