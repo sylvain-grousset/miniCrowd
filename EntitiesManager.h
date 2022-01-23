@@ -4,8 +4,6 @@
 
 #ifndef MINICROWD_ENTITIESMANAGER_H
 #define MINICROWD_ENTITIESMANAGER_H
-
-
 #include "Entity.h"
 
 class EntitiesManager {
@@ -18,6 +16,8 @@ public:
     void moove();
 
     void changePosition();
+
+    void checkPosition(int width, int height);
 
 private:
     vector<Entity> entity1;      //Liste des entités.

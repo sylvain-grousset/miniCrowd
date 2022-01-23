@@ -3,6 +3,7 @@
 //
 
 #include <cstdlib>
+#include <iostream>
 #include "EntitiesManager.h"
 
 EntitiesManager::EntitiesManager() {
@@ -40,3 +41,11 @@ void EntitiesManager::changePosition() {
     }
 
 }
+
+//void EntitiesManager::checkPosition(int width, int height) {
+//    for (auto &e: entity1){
+//        if (e.getPx() > width || e.getPy() > height || e.getPx() < 0 || e.getPy() < 0){
+//            cout << "Une a dépassé la taille de la fenêtre !";
+//        }
+//    }
+//}

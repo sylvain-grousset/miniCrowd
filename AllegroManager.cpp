@@ -3,7 +3,6 @@
 //
 #include <string>
 #include <iostream>
-#include <vector>
 #include <thread>
 #include "AllegroManager.h"
 
@@ -41,6 +40,7 @@ void AllegroManager::mainloop() {
         al_clear_to_color(al_map_rgb(250,250,250));
 
         // On dessine chaque entités, puis on lui change sa position et on la fait bouger.
+        //entitiesManager.checkPosition(width, height);
         entitiesManager.draw();
         entitiesManager.changePosition();
         entitiesManager.moove();
