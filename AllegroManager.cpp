@@ -67,8 +67,8 @@ void AllegroManager::mainloop() {
 //            al_draw_filled_ellipse(e[0], e[1], 4, 4, al_map_rgba(10, 20, 100, 200) );
 //        }
         entitiesManager.draw();
-        entitiesManager.moove();
         entitiesManager.changeMoove();
+        entitiesManager.moove();
         // On affiche le backbuffer
         al_flip_display();
 
@@ -113,23 +113,4 @@ void AllegroManager::mainloop() {
 
     }
 
-
-
-    //########################### GETTER & SETTER #################################
-
-    int AllegroManager::getWidth() const {
-        return width;
-    }
-
-    void AllegroManager::setWidth(int windowWidth) {
-        AllegroManager::width = width;
-    }
-
-    int AllegroManager::getHeight() const {
-        return height;
-    }
-
-    void AllegroManager::setHeight(int windowsHeight){
-        AllegroManager::height = height;
-    }
 

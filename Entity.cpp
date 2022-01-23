@@ -8,21 +8,23 @@
 #include <allegro5/allegro_primitives.h>
 
 using namespace std;
-Entity::Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue):
+Entity::Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int taille):
 px {positionX},
 py {positionY},
 vx {velociteX},
 vy {velociteY},
 r {red},
 g {green},
-b {blue}
+b {blue},
+taille {taille},
+gStep {0}
 {
 
 }
 
 
 void Entity::draw() {
-    al_draw_filled_ellipse(px, py, 4, 4, al_map_rgba(r, g, b, 200) );
+    al_draw_filled_ellipse(px, py, taille, taille, al_map_rgba(r, g, b, 200) );
 }
 
 void Entity::moove() {
@@ -32,8 +34,8 @@ void Entity::moove() {
 
 void Entity::changeMoove() {
     if (gStep%20 == 0){
-        vx = 2*(rand()/RAND_MAX)-2;
-        vy = 2*(rand()/RAND_MAX)-2;
+        vx = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
+        vy = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
         // Change entities velocity
     }
     gStep++;

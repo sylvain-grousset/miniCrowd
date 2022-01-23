@@ -16,10 +16,8 @@ void EntitiesManager::add(Entity a) {
 void EntitiesManager::init(int nbEntities, int width, int height) {
     srand(42);
     for (int i = 0; i < nbEntities; ++i) {
-        Entity entity (rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255));
-        entity.setGStep(0);
+        Entity entity (rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
         add(entity);
-
     }
 
 }
@@ -32,6 +30,7 @@ void EntitiesManager::draw() {
 
 void EntitiesManager::moove() {
     for (auto &e: entity1){
+        e.changeMoove();
         e.moove();
     }
 }

@@ -9,7 +9,7 @@ using namespace std;
 class Entity {
 
 public:
-    Entity(double positionX, double positionY, double velociteX, double velociteY, int r, int g, int b);
+    Entity(double positionX, double positionY, double velociteX, double velociteY, int r, int g, int b, int size);
 
     void draw();
     void moove();
@@ -26,7 +26,9 @@ private:
     double vx;
     double vy;
 
-    int gStep;
+    unsigned int gStep;
+
+    int taille;
 
     int r;
     int g;

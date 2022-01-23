@@ -19,11 +19,6 @@ public:
     AllegroManager(int largeur, int hauteur, int nbEntities); //Constructeur
     ~AllegroManager();
 
-    int getWidth() const;
-    void setWidth(int width);
-    int getHeight() const;
-    void setHeight(int height);
-
 private:
     int width;                        //Taille en largeur de la fenêtre
     int height;                      //Taille en hauteur de la fenêtre
