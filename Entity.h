@@ -13,7 +13,7 @@ public:
 
     void draw();
     void moove();
-    void changeMoove();
+    void changePosition();
 
     int getGStep() const;
     void setGStep(int gStep);

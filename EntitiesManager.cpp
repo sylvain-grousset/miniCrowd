@@ -30,14 +30,13 @@ void EntitiesManager::draw() {
 
 void EntitiesManager::moove() {
     for (auto &e: entity1){
-        e.changeMoove();
         e.moove();
     }
 }
 
-void EntitiesManager::changeMoove() {
+void EntitiesManager::changePosition() {
     for (auto &e: entity1){
-        e.changeMoove();
+        e.changePosition();
     }
 
 }

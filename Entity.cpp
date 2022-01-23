@@ -31,7 +31,7 @@ void Entity::moove() {
     py += vy;
 }
 
-void Entity::changeMoove() {
+void Entity::changePosition() {
     if (gStep%20 == 0){
         vx = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
         vy = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;

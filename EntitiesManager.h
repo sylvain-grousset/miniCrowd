@@ -17,7 +17,7 @@ public:
     void draw();
     void moove();
 
-    void changeMoove();
+    void changePosition();
 
 private:
     vector<Entity> entity1;      //Liste des entités.

@@ -6,10 +6,6 @@
 #include <vector>
 #include <thread>
 #include "AllegroManager.h"
-#include "Entity.h"
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_primitives.h>
-#include <search.h>
 
 using namespace std;
 AllegroManager::AllegroManager(int width, int height, int nbEntities):
@@ -27,14 +23,13 @@ AllegroManager::~AllegroManager() {
 }
 
 void AllegroManager::mainloop() {
-    // Horrible facon de representer les positions des individus
-    vector<vector<double>> entities;
-    vector<vector<double>> velocities;
 
+    // Initialisation des entités.
     entitiesManager.init(nombreEntities, width, height);
 
     // Boucle principale
     while (true){
+
         // Récupération des évenements clavier
         al_get_keyboard_state(&gKbdstate);
 
@@ -42,43 +37,22 @@ void AllegroManager::mainloop() {
         if (al_key_down(&gKbdstate, ALLEGRO_KEY_ESCAPE))
             break;
 
-        // Comportement des individus
-//        int i = 0;
-//        for (auto& e: entities){
-//            e[0] += velocities[i][0];
-//            e[1] += velocities[i][1];
-//            ++i;
-//        }
-
-        // Sometimes, change entities velocity
-//                if (gStep%20 == 0){
-//                    // Change entities velocity
-//                    for (auto& v: velocities){
-//                        v[0] = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
-//                        v[1] = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
-//                    }
-//                }
-
         // On efface tout (dans le backbuffer)
         al_clear_to_color(al_map_rgb(250,250,250));
 
-        // Dessin des individus (dans le backbuffer)
-//        for (const auto& e: entities){
-//            al_draw_filled_ellipse(e[0], e[1], 4, 4, al_map_rgba(10, 20, 100, 200) );
-//        }
+        // On dessine chaque entités, puis on lui change sa position et on la fait bouger.
         entitiesManager.draw();
-        entitiesManager.changeMoove();
+        entitiesManager.changePosition();
         entitiesManager.moove();
+
         // On affiche le backbuffer
         al_flip_display();
 
         this_thread::sleep_for(std::chrono::milliseconds(10));
 
-        gStep++;
-
     }
 }
-    void AllegroManager::init() <{
+    void AllegroManager::init(){
 
         if(!al_init()) {
             crashOnError("failed to initialize allegro!");
@@ -102,7 +76,6 @@ void AllegroManager::mainloop() {
         }
 
     }
-
 
     void AllegroManager::crashOnError(string message) {
         cerr << message << endl;
