@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/lpro/casir/grousses/PROFS/RAIEVSKY/miniCrowd/main.cpp
+iostream
+-
+vector
+-
+thread
+-
+allegro5/allegro.h
+-
+allegro5/allegro_primitives.h
+-
+

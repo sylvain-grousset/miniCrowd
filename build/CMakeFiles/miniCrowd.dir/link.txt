@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -O0 -Wall -Wextra   CMakeFiles/miniCrowd.dir/main.cpp.o  -o miniCrowd /usr/lib/x86_64-linux-gnu/liballegro.so /usr/lib/x86_64-linux-gnu/liballegro_primitives.so 
