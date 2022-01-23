@@ -35,16 +35,22 @@ void Entity::changePosition() {
     if (gStep%20 == 0){
         vx = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
         vy = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
-        // Change entities velocity
     }
     gStep++;
 }
 
-int Entity::getGStep() const {
-    return gStep;
+double Entity::getPx() const {
+    return px;
 }
 
-void Entity::setGStep(int gStep) {
-    Entity::gStep = gStep;
+void Entity::setPx(double px) {
+    Entity::px = px;
 }
 
+double Entity::getPy() const {
+    return py;
+}
+
+void Entity::setPy(double py) {
+    Entity::py = py;
+}

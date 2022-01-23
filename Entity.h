@@ -15,8 +15,10 @@ public:
     void moove();
     void changePosition();
 
-    int getGStep() const;
-    void setGStep(int gStep);
+    double getPx() const;
+    void setPx(double px);
+    double getPy() const;
+    void setPy(double py);
 
 private:
     double px;
@@ -27,6 +29,7 @@ private:
     int taille;
     unsigned int gStep;
 };
+
 
 
 #endif //MINICROWD_ENTITY_H
