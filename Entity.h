@@ -9,11 +9,10 @@ using namespace std;
 class Entity {
 
 public:
-    Entity(double positionX, double positionY, double velociteX, double velociteY, int r, int g, int b, int size);
+    Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int size);
 
     void draw();
     void moove();
-
     void changeMoove();
 
     int getGStep() const;
@@ -22,18 +21,11 @@ public:
 private:
     double px;
     double py;
-
     double vx;
     double vy;
-
-    unsigned int gStep;
-
+    int red, green, blue;
     int taille;
-
-    int r;
-    int g;
-    int b;
-    int a;
+    unsigned int gStep;
 };
 
 

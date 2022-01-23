@@ -3,7 +3,6 @@
 //
 
 #include "Entity.h"
-#include <vector>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 
@@ -13,9 +12,9 @@ px {positionX},
 py {positionY},
 vx {velociteX},
 vy {velociteY},
-r {red},
-g {green},
-b {blue},
+red {red},
+green {green},
+blue {blue},
 taille {taille},
 gStep {0}
 {
@@ -24,7 +23,7 @@ gStep {0}
 
 
 void Entity::draw() {
-    al_draw_filled_ellipse(px, py, taille, taille, al_map_rgba(r, g, b, 200) );
+    al_draw_filled_ellipse(px, py, taille, taille, al_map_rgba(red, green, blue, 200) );
 }
 
 void Entity::moove() {
