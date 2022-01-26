@@ -41,10 +41,17 @@ void EntitiesManager::draw() {
     }
 }
 
-//void EntitiesManager::checkPosition(int width, int height) {
-//    for (auto &e: entity1){
-//        if (e.getPx() > width || e.getPy() > height || e.getPx() < 0 || e.getPy() < 0){
-//            cout << "Une a dépassé la taille de la fenêtre !";
-//        }
-//    }
-//}
+/*
+ * Fonction qui permet de remettre une entitée au centre de l'écran lorsqu'elle dépasse de la fenêtre.
+ * J'utilise les getter des attributs px et py pour vérifier si l'entité est encore dans la fenêtre.
+ * Lorsqu'elle n'est plus dans la fenêtre, j'utilise les setters de px et py pour la re mettre au centre de l'écran.
+ */
+void EntitiesManager::checkPosition(int width, int height) {
+    for (auto &e: entity1){
+        if (e.getPx() > width || e.getPy() > height || e.getPx() < 0 || e.getPy() < 0){
+            e.setPx(width/2);
+            e.setPy(height/2);
+            //cout << "Une a dépassé la taille de la fenêtre !";
+        }
+    }
+}

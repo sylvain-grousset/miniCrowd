@@ -16,8 +16,8 @@ public:
     void changePosition();  // Redéfinie la vélocité d'une entité en fonction d'un certain lapse de temps.
 
     /*
-     * Getter & Setter utilisés pour implémenter un système de rebond des boules
-     * lorsqu'elles touchent un bord de la fenêtre. Je n'ai pas eu le temps de le finir.
+     * Getter & Setter utilisés pour implémenter un système qui recentre les entités
+     * lorsqu'elles sortent de la fenêtre.
      */
     double getPx() const;
     void setPx(double px);

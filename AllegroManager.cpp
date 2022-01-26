@@ -46,9 +46,10 @@ void AllegroManager::mainloop() {
         // On efface tout (dans le backbuffer)
         al_clear_to_color(al_map_rgb(250,250,250));
 
-        //entitiesManager.checkPosition(width, height);
+        // Vérifie si une entité n'est pas sortie de la fenêtre. Le cas échéant elle est repositionnée au milieu.
+        entitiesManager.checkPosition(width, height);
 
-        //Appel de la fonction de mise à jour des Entities.
+        // Appel de la fonction de mise à jour des Entities.
         entitiesManager.draw();
 
         // On affiche le backbuffer.
