@@ -17,7 +17,7 @@ Je n'ai pas fait la question 7 pour me concentrer sur la rédaction des commenta
 La principale difficulté rencontrée dans ce programme était de comprendre le programme de base. En effet, lorsque j'avais compris le programme écrit au tout début, il était facile pour moi de visualiser ce qu'il y avait à changer.
 Le C++ a aussi été un frein car c'est un langage qui nécessite beaucoup de rigueur.
 
-J'ai voulu faire une version où les Entités rebondissent lorsqu'elles atteignent un bord de la fenêtre. A cause de problèmes et du manque de temps je n'ai pas réussi à mettre en place.
-
+J'ai voulu faire une version où les Entités rebondissent lorsqu'elles atteignent un bord de la fenêtre mais je n'ai pas réussi. Pour rester un peut dans ce thème,
+j'ai fait en sorte que lorsqu'une entité sort des dimensions de la fenêtre, elle est repositionnée au milieu de la fenêtre.
 
 
