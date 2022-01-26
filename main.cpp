@@ -4,6 +4,6 @@
 
 int main() {
 
-    AllegroManager allegro(500, 500, 1);
+    AllegroManager allegro(500, 500, 100);
 
 }

@@ -24,22 +24,11 @@ void EntitiesManager::init(int nbEntities, int width, int height) {
 }
 
 void EntitiesManager::draw() {
-    for (auto e: entity1) {
+    for (auto &e: entity1) {
         e.draw();
-    }
-}
-
-void EntitiesManager::moove() {
-    for (auto &e: entity1){
         e.moove();
-    }
-}
-
-void EntitiesManager::changePosition() {
-    for (auto &e: entity1){
         e.changePosition();
     }
-
 }
 
 //void EntitiesManager::checkPosition(int width, int height) {

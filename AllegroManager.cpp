@@ -30,28 +30,28 @@ void AllegroManager::mainloop() {
     while (true){
 
         // Récupération des évenements clavier
+        // si on clique sur Esc, on ferme le programme.
         al_get_keyboard_state(&gKbdstate);
-
-        // Sortie si Esc.
         if (al_key_down(&gKbdstate, ALLEGRO_KEY_ESCAPE))
             break;
 
         // On efface tout (dans le backbuffer)
         al_clear_to_color(al_map_rgb(250,250,250));
 
-        // On dessine chaque entités, puis on lui change sa position et on la fait bouger.
         //entitiesManager.checkPosition(width, height);
+
+        //Appel de la fonction de mise à jour des Entities
         entitiesManager.draw();
-        entitiesManager.changePosition();
-        entitiesManager.moove();
 
         // On affiche le backbuffer
         al_flip_display();
 
-        this_thread::sleep_for(std::chrono::milliseconds(10));
+        this_thread::sleep_for(std::chrono::milliseconds(1));
 
     }
 }
+    //Méthode d'initialisation de la librairie ALlegro,
+    //elle gère les messages erreurs.
     void AllegroManager::init(){
 
         if(!al_init()) {
@@ -77,6 +77,7 @@ void AllegroManager::mainloop() {
 
     }
 
+    //Fonction affichant les messages d'erreurs de la fonction init.
     void AllegroManager::crashOnError(string message) {
         cerr << message << endl;
         exit(-1);

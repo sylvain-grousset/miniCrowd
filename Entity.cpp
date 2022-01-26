@@ -7,6 +7,7 @@
 #include <allegro5/allegro_primitives.h>
 
 using namespace std;
+
 Entity::Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int taille):
 px {positionX},
 py {positionY},
@@ -33,8 +34,8 @@ void Entity::moove() {
 
 void Entity::changePosition() {
     if (gStep%20 == 0){
-        vx = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
-        vy = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
+        vx = rand()/ static_cast<double>(RAND_MAX) - 0.5;
+        vy = rand()/ static_cast<double>(RAND_MAX) - 0.5;
     }
     gStep++;
 }
