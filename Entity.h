@@ -24,7 +24,7 @@ public:
     double getPy() const;
     void setPy(double py);
 
-
+private:
     /*
      * px, py : Position en X et en Y des entités
      * vx, vy : Vélocité en X et Y
@@ -32,7 +32,6 @@ public:
      * Taille : Taille de l'entité (aléatoire entre 1 et 10)
      * gStep : Utilisé pour changer la vélocité des entités. Par défaut est à 0 et ne peut pas être négatif (une entité ne peut pas reculer, elles ne font qu'avancer)
      */
-private:
     double px;
     double py;
     double vx;

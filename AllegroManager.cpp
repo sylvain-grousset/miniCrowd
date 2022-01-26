@@ -7,6 +7,12 @@
 #include "AllegroManager.h"
 
 using namespace std;
+
+/*
+ * Constructeur initialisant la taille de la fenêtre et le nombre d'entités,
+ * elle appelle ensuite la fonction d'initialisation des erreurs pour Allegro
+ * et enfin la mainloop pour lancer le programme.
+ */
 AllegroManager::AllegroManager(int width, int height, int nbEntities):
 width {width},
 height {height},
@@ -26,7 +32,9 @@ void AllegroManager::mainloop() {
     // Initialisation des entités.
     entitiesManager.init(nombreEntities, width, height);
 
-    // Boucle principale
+    /*
+     * Boucle principale du programme.
+     */
     while (true){
 
         // Récupération des évenements clavier
@@ -40,18 +48,22 @@ void AllegroManager::mainloop() {
 
         //entitiesManager.checkPosition(width, height);
 
-        //Appel de la fonction de mise à jour des Entities
+        //Appel de la fonction de mise à jour des Entities.
         entitiesManager.draw();
 
-        // On affiche le backbuffer
+        // On affiche le backbuffer.
         al_flip_display();
 
-        this_thread::sleep_for(std::chrono::milliseconds(1));
+        this_thread::sleep_for(std::chrono::milliseconds(10));
 
     }
 }
-    //Méthode d'initialisation de la librairie ALlegro,
-    //elle gère les messages erreurs.
+
+    /*
+     *  Méthode d'initialisation de la librairie ALlegro
+     *  elle gère les différentes erreurs.
+     */
+
     void AllegroManager::init(){
 
         if(!al_init()) {
@@ -77,7 +89,9 @@ void AllegroManager::mainloop() {
 
     }
 
-    //Fonction affichant les messages d'erreurs de la fonction init.
+    /*
+     * Fonction affichant les messages d'erreurs de la fonction init.
+     */
     void AllegroManager::crashOnError(string message) {
         cerr << message << endl;
         exit(-1);

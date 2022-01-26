@@ -8,6 +8,9 @@
 
 using namespace std;
 
+/*
+ * Initialise les attributs pour chaque entités.
+ */
 Entity::Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int taille):
 px {positionX},
 py {positionY},
@@ -22,16 +25,28 @@ gStep {0}
 
 }
 
-
+/*
+ * Dessine une entité avec ses attributs.
+ */
 void Entity::draw() {
     al_draw_filled_ellipse(px, py, taille, taille, al_map_rgba(red, green, blue, 200) );
 }
 
+/*
+ * Bouge une entité en lui ajoutant sa vélocité générée aléatoirement.
+ *
+ */
 void Entity::moove() {
     px += vx;
     py += vy;
 }
 
+/*
+ * A chaque fois que la variable gStep a fait 20 cycles (le temps de voir les entités bouger un petit peut)
+ * on ré affecte aux vélocités une nouvelle valeur.
+ * Puis lorsque gStep a encore fait 20 cycles, on ré affecte à nouveau aux vélocités une nouvelle valeur et
+ * ce jusqu'à la fins ud programme ...
+ */
 void Entity::changePosition() {
     if (gStep%20 == 0){
         vx = rand()/ static_cast<double>(RAND_MAX) - 0.5;
@@ -40,6 +55,7 @@ void Entity::changePosition() {
     gStep++;
 }
 
+//                        GETTER & SETTER
 double Entity::getPx() const {
     return px;
 }

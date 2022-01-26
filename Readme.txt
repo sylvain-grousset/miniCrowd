@@ -1,2 +1,0 @@
-Sylvain GROUSSET
-
