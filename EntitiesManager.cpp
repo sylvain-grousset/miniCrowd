@@ -15,7 +15,7 @@ EntitiesManager::EntitiesManager() {
  * Ajoute une entité à la fin du vector d'entité entity1.
  */
 void EntitiesManager::add(Entity a) {
-    entity1.push_back(a);
+    entity1.push_back(&a);
 }
 
 /*
@@ -26,7 +26,7 @@ void EntitiesManager::init(int nbEntities, int width, int height) {
     srand(42);
     for (int i = 0; i < nbEntities; ++i) {
         //Entity entity (rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
-        Rectangle rectangle(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
+        Rectangle* rectangle = new Rectangle(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
         add(rectangle);
     }
 
