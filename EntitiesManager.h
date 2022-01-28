@@ -19,7 +19,7 @@ public:
     void checkPosition(int width, int height);
 
 private:
-    vector<Entity> entity1;     // Contient la liste de toutes les entités.
+    vector<Entity*> entity1;     // Contient la liste de toutes les entités.
     void add(Entity a);         // Ajout d'une entité dans le vector d'entités entity1. Je passe par une fonction pour ajouter une Entity au vector parce que j'ai l'habitude de faire comme ça.
 };
 

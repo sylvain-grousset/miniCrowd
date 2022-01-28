@@ -11,9 +11,9 @@ class Entity {
 public:
     Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int size);
 
-    void draw();            // Dessine une entité avec la fonction al_draw_filled_ellipse()
-    void moove();           // Bouge une entité en lui ajoutant sa vélocité générée aléatoirement.
-    void changePosition();  // Redéfinie la vélocité d'une entité en fonction d'un certain lapse de temps.
+    virtual void draw();            // Dessine une entité avec la fonction al_draw_filled_ellipse()
+    virtual void moove();           // Bouge une entité en lui ajoutant sa vélocité générée aléatoirement.
+    virtual void changePosition();  // Redéfinie la vélocité d'une entité en fonction d'un certain lapse de temps.
 
     /*
      * Getter & Setter utilisés pour implémenter un système qui recentre les entités
@@ -32,13 +32,14 @@ private:
      * Taille : Taille de l'entité (aléatoire entre 1 et 10)
      * gStep : Utilisé pour changer la vélocité des entités. Par défaut est à 0 et ne peut pas être négatif (une entité ne peut pas reculer, elles ne font qu'avancer)
      */
-    double px;
-    double py;
-    double vx;
-    double vy;
-    int red, green, blue;
-    int taille;
-    unsigned int gStep;
+    protected:
+        double px;
+        double py;
+        double vx;
+        double vy;
+        int red, green, blue;
+        int taille;
+        unsigned int gStep;
 };
 
 
