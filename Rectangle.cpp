@@ -14,3 +14,16 @@ draw();
 void Rectangle::draw() {
     al_draw_filled_rectangle(px, py, taille, taille, al_map_rgba(red, green, blue, 200));
 }
+
+void Rectangle::moove() {
+    px += vx;
+    taille += vy;
+}
+
+void Rectangle::changePosition() {
+    if (gStep%20 == 0){
+        //vx = rand()/ static_cast<double>(RAND_MAX) - 0.5;
+        vy = rand()/ static_cast<double>(RAND_MAX) - 0.5;
+    }
+    gStep++;
+}

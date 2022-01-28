@@ -13,6 +13,8 @@ public:
     Rectangle(double positionX, double positionY, double velociteX, double velociteY, int red, int green,
               int blue, int size);
 
+    void changePosition() override;
+    void moove() override;
     void draw() override;
 };
 
