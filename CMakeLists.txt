@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-g -O0 -Wall -Wextra")
 
 
-add_executable(miniCrowd main.cpp AllegroManager.cpp AllegroManager.h Entity.cpp Entity.h EntitiesManager.cpp EntitiesManager.h Rectangle.cpp Rectangle.h)
+add_executable(miniCrowd main.cpp AllegroManager.cpp AllegroManager.h Entity.cpp Entity.h EntitiesManager.cpp EntitiesManager.h Rectangle.cpp Rectangle.h Amie.cpp Amie.h)
 
 if(UNIX)
    find_library(LIBALLEGRO allegro)

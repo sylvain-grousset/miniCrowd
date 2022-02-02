@@ -4,8 +4,10 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <allegro5/color.h>
 #include "EntitiesManager.h"
 #include "Rectangle.h"
+#include "Amie.h"
 
 EntitiesManager::EntitiesManager() {
 
@@ -27,12 +29,19 @@ void EntitiesManager::init(int nbEntities, int width, int height) {
     for (int i = 0; i < nbEntities; ++i) {
         //Entity entity (rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
 
-        double coinHautGauche = 1+(rand()%50);
-        double coinBasDroite = 1+(rand()%50);
-        Rectangle* rectangle = new Rectangle(coinHautGauche, coinHautGauche, coinHautGauche+20, coinHautGauche+20, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
-        Entity* entity = new Entity(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, 1+(rand()%255), 1+(rand()%255), 1+(rand()%255), 1+(rand()%10));
+        double coinHautGauche = rand() % height;
+        double coinBasDroite = rand() % width;
 
-        entity1.push_back(entity);
+        ALLEGRO_COLOR color (al_map_rgba(1+(rand()%255),1+(rand()%255), 1+(rand()%255), 200));
+
+        Rectangle* rectangle = new Rectangle(coinHautGauche, coinBasDroite, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
+        Entity* entity = new Entity(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
+
+        Amie* amie = new Amie(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
+        //entity1.push_back(amie);
+        if(i & 1){entity1.push_back(rectangle); // si i est impair, on dessine un rectangle
+        }else{entity1.push_back(entity);}       // Sinon si i est pair, on dessine une ellipse.
+
         //add(rectangle);
     }
 

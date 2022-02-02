@@ -10,12 +10,14 @@
 
 class Rectangle : public Entity{
 public:
-    Rectangle(double positionX, double positionY, double velociteX, double velociteY, int red, int green,
-              int blue, int size);
+
+    Rectangle(double positionX, double positionY, double velociteX, double velociteY, ALLEGRO_COLOR color, int size);
 
     void changePosition() override;
     void moove() override;
     void draw() override;
+
+
 };
 
 

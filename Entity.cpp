@@ -11,14 +11,12 @@ using namespace std;
 /*
  * Initialise les attributs pour chaque entités.
  */
-Entity::Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int taille):
+Entity::Entity(double positionX, double positionY, double velociteX, double velociteY, ALLEGRO_COLOR color, int taille):
 px {positionX},
 py {positionY},
 vx {velociteX},
 vy {velociteY},
-red {red},
-green {green},
-blue {blue},
+color {color},
 taille {taille},
 gStep {0}
 {
@@ -29,7 +27,7 @@ gStep {0}
  * Dessine une entité avec ses attributs.
  */
 void Entity::draw() {
-    al_draw_filled_ellipse(px, py, taille, taille, al_map_rgba(red, green, blue, 200) );
+    al_draw_filled_ellipse(px, py, taille, taille, color);
 }
 
 /*

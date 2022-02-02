@@ -5,11 +5,13 @@
 #ifndef MINICROWD_ENTITY_H
 #define MINICROWD_ENTITY_H
 #include <vector>
+#include <allegro5/color.h>
+
 using namespace std;
 class Entity {
 
 public:
-    Entity(double positionX, double positionY, double velociteX, double velociteY, int red, int green, int blue, int size);
+    Entity(double positionX, double positionY, double velociteX, double velociteY, ALLEGRO_COLOR color, int size);
 
     virtual void draw();            // Dessine une entité avec la fonction al_draw_filled_ellipse()
     virtual void moove();           // Bouge une entité en lui ajoutant sa vélocité générée aléatoirement.
@@ -37,6 +39,9 @@ private:
         double py;
         double vx;
         double vy;
+        ALLEGRO_COLOR color;
+
+
         int red, green, blue;
         int taille;
         unsigned int gStep;
