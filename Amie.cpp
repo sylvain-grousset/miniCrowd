@@ -34,9 +34,7 @@ void Amie::moove() {
         taille = 10+(rand()%20);
         while (taille>entity->getTaille()){
             taille = 10+(rand()%20);
-
         }
     }
-    //taille = entity->getTaille();
 
 }
