@@ -8,7 +8,7 @@
 
 #include "Entity.h"
 
-class Amie : Entity{
+class Amie : public Entity{
 
 public:
 
@@ -16,7 +16,10 @@ public:
     void moove() override;
     void changePosition() override;
 
-    Amie(double positionX, double positionY, double velociteX, double velociteY, ALLEGRO_COLOR color, int size);
+    Amie(double positionX, double positionY, double velociteX, double velociteY, ALLEGRO_COLOR color, int size, Entity* entity);
+
+private:
+    Entity* entity;
 };
 
 

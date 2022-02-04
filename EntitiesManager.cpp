@@ -33,14 +33,17 @@ void EntitiesManager::init(int nbEntities, int width, int height) {
         double coinBasDroite = rand() % width;
 
         ALLEGRO_COLOR color (al_map_rgba(1+(rand()%255),1+(rand()%255), 1+(rand()%255), 200));
+        //ALLEGRO_COLOR color (al_map_rgba(0,255, 0, 200));
 
-        Rectangle* rectangle = new Rectangle(coinHautGauche, coinBasDroite, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
-        Entity* entity = new Entity(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
+        //Rectangle* rectangle = new Rectangle(coinHautGauche, coinBasDroite, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
+        Entity* entity = new Entity(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 10+(rand()%20));
 
-        Amie* amie = new Amie(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
-        //entity1.push_back(amie);
-        if(i & 1){entity1.push_back(rectangle); // si i est impair, on dessine un rectangle
-        }else{entity1.push_back(entity);}       // Sinon si i est pair, on dessine une ellipse.
+        Amie* amie = new Amie(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 10+(rand()%20), entity);
+
+        if(i & 1){//entity1.push_back(rectangle); // si i est impair, on dessine un rectangle
+        }else{
+            entity1.push_back(entity);
+        entity1.push_back(amie);}       // Sinon si i est pair, on dessine une ellipse.
 
         //add(rectangle);
     }

@@ -47,8 +47,8 @@ void Entity::moove() {
  */
 void Entity::changePosition() {
     if (gStep%20 == 0){
-        vx = rand()/ static_cast<double>(RAND_MAX) - 0.5;
-        vy = rand()/ static_cast<double>(RAND_MAX) - 0.5;
+        vx = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
+        vy = 4*(rand()/ static_cast<double>(RAND_MAX)) - 2;
     }
     gStep++;
 }
@@ -68,4 +68,20 @@ double Entity::getPy() const {
 
 void Entity::setPy(double py) {
     Entity::py = py;
+}
+
+int Entity::getTaille() const {
+    return taille;
+}
+
+void Entity::setTaille(int taille) {
+    Entity::taille = taille;
+}
+
+const ALLEGRO_COLOR &Entity::getColor() const {
+    return color;
+}
+
+void Entity::setColor(const ALLEGRO_COLOR &color) {
+    Entity::color = color;
 }

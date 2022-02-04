@@ -26,6 +26,14 @@ public:
     double getPy() const;
     void setPy(double py);
 
+    int getTaille() const;
+
+    void setTaille(int taille);
+
+    const ALLEGRO_COLOR &getColor() const;
+
+    void setColor(const ALLEGRO_COLOR &color);
+
 private:
     /*
      * px, py : Position en X et en Y des entités
