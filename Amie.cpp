@@ -30,10 +30,13 @@ void Amie::moove() {
     px += (entity->getPx() - px)*0.01;
     py += (entity->getPy() - py)*0.01;
     color = entity->getColor();
+
+    al_draw_line(px,py,entity->getPx(),entity->getPy(), color, 2);
+
     if(taille > entity->getTaille()){
-        taille = 10+(rand()%20);
+        taille = 5+(rand()%10);
         while (taille>entity->getTaille()){
-            taille = 10+(rand()%20);
+            taille = 5+(rand()%10);
         }
     }
 

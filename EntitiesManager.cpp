@@ -36,9 +36,9 @@ void EntitiesManager::init(int nbEntities, int width, int height) {
         //ALLEGRO_COLOR color (al_map_rgba(0,255, 0, 200));
 
         //Rectangle* rectangle = new Rectangle(coinHautGauche, coinBasDroite, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 1+(rand()%10));
-        Entity* entity = new Entity(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 10+(rand()%20));
+        Entity* entity = new Entity(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 5+(rand()%10));
 
-        Amie* amie = new Amie(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 10+(rand()%20), entity);
+        Amie* amie = new Amie(rand()%width, rand()%height, 4*(rand()/RAND_MAX)-2, 4*(rand()/RAND_MAX)-2, color, 5+(rand()%10), entity);
 
         if(i & 1){//entity1.push_back(rectangle); // si i est impair, on dessine un rectangle
         }else{
@@ -71,6 +71,7 @@ void EntitiesManager::checkPosition(int width, int height) {
         if (e->getPx() > width || e->getPy() > height || e->getPx() < 0 || e->getPy() < 0){
             e->setPx(width/2);
             e->setPy(height/2);
+
             //cout << "Une a dépassé la taille de la fenêtre !";
         }
     }
